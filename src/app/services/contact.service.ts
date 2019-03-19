@@ -2,7 +2,8 @@ import { Contact } from '../models/contact.model';
 import { Subject } from 'rxjs';
 
 
-export class UserService {
+export class ContactService {
+
   private contacts: Contact[];
   contactSubject = new Subject<Contact[]>();
 

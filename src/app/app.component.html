@@ -4,17 +4,18 @@
       <div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">
         <h2>Contact</h2>
         <a routerLink="/new-contact">add contact</a>
-        <app-contact-list  *ngFor="let contact of aContacts"  [contact]="contact" ></app-contact-list>
+        <router-outlet></router-outlet>
       </div>
 
-      <div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">
+      <!--<div id="contacts" class="panel-collapse collapse show" aria-expanded="true" style="">
         <h2>Add Contact</h2>
         <a routerLink="">close</a>
         <app-new-contact></app-new-contact>
       </div>
+      -->
 
   </div>
 </div>
 
-<router-outlet></router-outlet>
+
 

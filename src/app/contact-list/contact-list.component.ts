@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Contact } from '../models/contact.model';
+import { Subscription } from 'rxjs';
+import { ContactService } from '../services/contact.service';
 
 @Component({
   selector: 'app-contact-list',
@@ -8,11 +10,31 @@ import { Contact } from '../models/contact.model';
 })
 export class ContactListComponent implements OnInit {
 
-  @Input() contact : Contact;
+  contacts : Contact[];
+  contactSubscription: Subscription;
   
-  constructor() { }
+  constructor(private contactService : ContactService) {
+
+    this.contactSubscription = this.contactService.contactSubject.subscribe(
+      ( contacts : Contact[]) => {
+        this.contacts = contacts;
+      }
+    );
+    this.contactService.emitContacts();
+
+  }
 
   ngOnInit() {
+    this.contactSubscription = this.contactService.contactSubject.subscribe(
+      ( contacts : Contact[]) => {
+        this.contacts = contacts;
+      }
+    );
+    this.contactService.emitContacts();
+  }
+
+  ngOnDestroy(){
+    this.contactSubscription.unsubscribe();
   }
 
 }
