@@ -28,8 +28,19 @@
                 <span class="fa fa-envelope fa-fw text-muted" data-toggle="tooltip" data-original-title="" title=""></span>
                 <span class="text-muted small text-truncate">{{ contact.email }}</span>
             </div>
-            <button routerLink="/contact/update/{{contact.id}}" type="button" class="btn btn-success">Update</button>
+            <div class="d-flex flex-row-reverse">
+                    <div class="p-2">
+                        <button routerLink="" type="button" class="btn btn-danger">Delete</button>
+                    </div>
+                    <div class="p-2">
+                        <button routerLink="/contact/update/{{contact.id}}" type="button" class="btn btn-success">Update</button>
+                    </div>
+                    <div class="p-2">
+                        <button routerLink="" type="button" class="btn btn-secondary">show</button>
+                    </div>
+            </div>
         </div>
+       
     </li>   
 </ul>
 </div>
