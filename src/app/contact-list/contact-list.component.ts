@@ -21,6 +21,7 @@ export class ContactListComponent implements OnInit {
     this.contactSubscription = this.contactService.contactSubject.subscribe(
       ( contacts : Contact[]) => {
         this.contacts = contacts;
+        console.log(contacts);
       }
     );
     this.contactService.emitContacts();
@@ -28,6 +29,7 @@ export class ContactListComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.contacts);
     this.contactSubscription = this.contactService.contactSubject.subscribe(
       ( contacts : Contact[]) => {
         this.contacts = contacts;

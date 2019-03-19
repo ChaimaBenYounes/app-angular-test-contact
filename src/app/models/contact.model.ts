@@ -1,4 +1,5 @@
 export class Contact {
+  id : string;
   nom : string;
   prenom : string; 
   adresse : string;
@@ -9,6 +10,7 @@ export class Contact {
   photo : string;
 
   constructor(
+    id :string,
     nom : string,
     prenom : string,
     adresse : string,
@@ -18,6 +20,7 @@ export class Contact {
     photo:string,
     ) 
   {
+      this.id = id;
       this.nom = nom;
       this.prenom = prenom;
       this.adresse = adresse;

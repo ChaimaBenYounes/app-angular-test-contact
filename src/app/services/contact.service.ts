@@ -10,6 +10,7 @@ export class ContactService {
   constructor(){
     this.contacts = [
         new Contact(
+            '1',
             'Mike',
             'Anamendolla',
             'Hillcrest Rd',
@@ -19,6 +20,7 @@ export class ContactService {
             'http://demos.themes.guide/bodeo/assets/images/users/m101.jpg'
           ),
           new Contact(
+            '2',
             'Debbie',
             'Schmid',
             'W Alexander Rd',
@@ -28,6 +30,7 @@ export class ContactService {
             'http://demos.themes.guide/bodeo/assets/images/users/w104.jpg'
           ),
           new Contact(
+            '3',
             'Frazier',
             'Seth',
             'E North St',
@@ -37,6 +40,7 @@ export class ContactService {
             'http://demos.themes.guide/bodeo/assets/images/users/m105.jpg'
           ),
           new Contact(
+            '4',
             'Rosemary',
             'Porter',
             'Cackson St',
@@ -56,8 +60,19 @@ export class ContactService {
     this.emitContacts();
   }
 
-  getFakePhoto(){
+  getContactById( id : string ){ 
+    return  this.contacts.find(
+      contact => contact.id === id
+    );
+  }
+
+  getnextID(): string{
+    return (this.contacts.length + 1).toString(); 
+  }
+
+  getFakePhoto( id: string){
       // random image
-      return 'http://demos.themes.guide/bodeo/assets/images/users/m101.jpg';
+      console.log(id);
+      return 'http://demos.themes.guide/bodeo/assets/images/users/m10'+`${id}`+'.jpg';
   }
 }

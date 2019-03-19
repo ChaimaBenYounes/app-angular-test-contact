@@ -62,14 +62,16 @@ export class NewContactComponent implements OnInit {
   //OnSubmit Form
   onSubmitForm() {
     const formValue = this.contactForm.value;
+    const newID = this.contactService.getnextID();
     const newContact = new Contact(
+      newID,  
       formValue['nom'],
       formValue['prenom'],
       formValue['adresse'],
       formValue['codePostal'],
       formValue['tel'],
       formValue['email'],
-      this.contactService.getFakePhoto(),
+      this.contactService.getFakePhoto(newID),
     );
     this.contactService.addContact(newContact);
     this.router.navigate(['/contacts']);
