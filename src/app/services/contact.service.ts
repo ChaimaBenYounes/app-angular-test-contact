@@ -60,8 +60,13 @@ export class ContactService {
     this.emitContacts();
   }
 
+  updateContact(contact: Contact){
+    this.contacts[+contact.id] = contact;
+    this.emitContacts();
+  }
+
   getContactById( id : string ){ 
-    return  this.contacts.find(
+    return this.contacts.find(
       contact => contact.id === id
     );
   }
@@ -72,7 +77,6 @@ export class ContactService {
 
   getFakePhoto( id: string){
       // random image
-      console.log(id);
       return 'http://demos.themes.guide/bodeo/assets/images/users/m10'+`${id}`+'.jpg';
   }
 }

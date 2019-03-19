@@ -9,7 +9,7 @@
             </h4>
         </div>
     </div>
-    <form [formGroup]="contactForm" (ngSubmit)="onSubmitForm()">
+    <form [formGroup]="updateFormContact" (ngSubmit)="onSubmit()">
       <!-- prenom -->
       <div class="form-group">
         <label for="prenom">Prénom</label>
@@ -91,6 +91,6 @@
               </div>
           </div>
         </div>
-      <button type="submit" class="btn btn-primary float-right" [disabled]="contactForm.invalid">Soumettre</button>
+      <button type="submit" class="btn btn-primary float-right" [disabled]="updateFormContact.invalid">Soumettre</button>
     </form>
 </div>
