@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { ContactListComponent } from './contact-list/contact-list.component';
 import { NewContactComponent } from './new-contact/new-contact.component';
 import { UpdateContactComponent } from './update-contact/update-contact.component';
+import { ShowContactComponent } from './show-contact/show-contact.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactListComponent,
     NewContactComponent,
-    UpdateContactComponent
+    UpdateContactComponent,
+    ShowContactComponent
   ],
   imports: [
     BrowserModule,

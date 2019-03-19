@@ -61,7 +61,7 @@ export class ContactService {
   }
 
   updateContact(contact: Contact){
-    this.contacts[+contact.id] = contact;
+    this.contacts[+contact.id-1] = contact;
     this.emitContacts();
   }
 

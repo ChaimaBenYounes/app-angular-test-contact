@@ -13,35 +13,27 @@
     <li class="list-group-item" *ngFor="let contact of contacts">
         <div class="row w-100">
             <div class="col-12 col-sm-6 col-md-3 px-0">
-                <img src="{{ contact.photo }}" alt="Mike Anamendolla" class="rounded-circle mx-auto d-block img-fluid">
+                    <a routerLink="/contact/show/{{contact.id}}">
+                        <img src="{{ contact.photo }}" alt="Mike Anamendolla" class="rounded-circle mx-auto d-block img-fluid">
+                    </a>
             </div>
             <div class="col-12 col-sm-6 col-md-9 text-center text-sm-left">
                 <span class="fa fa-mobile fa-2x text-success float-right pulse" title="online now"></span>
-                <label class="name lead">{{ contact.nom }} {{ contact.prenom }}</label>
+                <label class="name lead"><a routerLink="/contact/show/{{contact.id}}">{{ contact.nom }} {{ contact.prenom }}</a></label>
                 <br> 
-                <span class="fa fa-map-marker fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="5842 Hillcrest Rd"></span>
-                <span class="text-muted">{{ contact.codePostal }} {{ contact.adresse }}</span>
-                <br>
                 <span class="fa fa-phone fa-fw text-muted" data-toggle="tooltip" title="" data-original-title="(870) 288-4149"></span>
                 <span class="text-muted small">{{ contact.tel }}</span>
                 <br>
-                <span class="fa fa-envelope fa-fw text-muted" data-toggle="tooltip" data-original-title="" title=""></span>
-                <span class="text-muted small text-truncate">{{ contact.email }}</span>
             </div>
             <div class="d-flex flex-row-reverse">
-                    <div class="p-2">
-                        <button routerLink="" type="button" class="btn btn-danger">Delete</button>
+                    <div class="float-right p-2">
+                        <button routerLink="/contact/show/{{contact.id}}" type="button" class="btn btn-secondary">Show</button>
                     </div>
-                    <div class="p-2">
-                        <button routerLink="/contact/update/{{contact.id}}" type="button" class="btn btn-success">Update</button>
-                    </div>
-                    <div class="p-2">
-                        <button routerLink="" type="button" class="btn btn-secondary">show</button>
-                    </div>
-            </div>
+                </div>
         </div>
        
-    </li>   
+    </li>
+    <br>   
 </ul>
 </div>
 
