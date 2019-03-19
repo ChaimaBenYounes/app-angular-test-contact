@@ -7,7 +7,7 @@ import { Contact } from './models/contact.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app-angular-test-Contact';
+
   aContacts : Contact[] = [
     new Contact(
       'nom',

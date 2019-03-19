@@ -1,3 +1,17 @@
-<p>
-  contact-list-item works!
-</p>
+<li class="list-group-item">
+<div class="row">
+    <div class="col-sm-6">
+        <h3 class="pull-left">{{ contact.name }}</h3>
+    </div>
+    <div class="col-sm-6">
+        <h4 class="pull-right">
+        <small>{{ contact.dateNaissance | date:'short' }}</small>
+        </h4>
+    </div>
+</div>
+<div class="panel-body">
+  {{ contact.adresse }}
+</div>
+
+
+</li>
