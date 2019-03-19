@@ -1,20 +1,19 @@
 export class Contact {
   nom : string;
   prenom : string; 
-  adresse : number;
+  adresse : string;
   codePostal: number;
-  tel : number;
+  tel : string;
   email: string;
   dateNaissance : Date;
 
   constructor(
     nom : string,
     prenom : string,
-    adresse : number,
+    adresse : string,
     codePostal: number,
-    tel : number,
-    email: string,
-    dateNaissance : Date,
+    tel : string,
+    email: string
     ) 
   {
       this.nom = nom;
