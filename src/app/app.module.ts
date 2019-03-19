@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import {ContactService} from './services/contact.service';
 
 import { AppComponent } from './app.component';
@@ -17,6 +17,7 @@ import { NewContactComponent } from './new-contact/new-contact.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [ContactService],
   bootstrap: [AppComponent]

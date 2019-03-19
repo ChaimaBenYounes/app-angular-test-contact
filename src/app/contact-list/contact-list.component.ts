@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Contact } from '../models/contact.model';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ContactService } from '../services/contact.service';
 
@@ -12,8 +13,10 @@ export class ContactListComponent implements OnInit {
 
   contacts : Contact[];
   contactSubscription: Subscription;
+  messageSuccess : boolean = false;
   
-  constructor(private contactService : ContactService) {
+  constructor(private contactService : ContactService,
+              private route: ActivatedRoute,) {
 
     this.contactSubscription = this.contactService.contactSubject.subscribe(
       ( contacts : Contact[]) => {

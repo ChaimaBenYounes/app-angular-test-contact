@@ -55,4 +55,9 @@ export class ContactService {
     this.contacts.push(contact);
     this.emitContacts();
   }
+
+  getFakePhoto(){
+      // random image
+      return 'http://demos.themes.guide/bodeo/assets/images/users/m101.jpg';
+  }
 }
