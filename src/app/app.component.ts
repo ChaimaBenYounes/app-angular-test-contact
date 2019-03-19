@@ -10,36 +10,40 @@ export class AppComponent {
 
   aContacts : Contact[] = [
     new Contact(
-      'nom',
-      'prenom',
-      'adresse',
-      20,
-      '0709472358',
-      'email@getNgModuleDef.fr'
+      'Mike',
+      'Anamendolla',
+      'Hillcrest Rd',
+      5842,
+      '(870) 288-4149',
+      'mike.ana@gmail.com',
+      'http://demos.themes.guide/bodeo/assets/images/users/m101.jpg'
     ),
     new Contact(
-      'nom',
-      'prenom',
-      'adresse',
-      20,
-      '0709472358',
-      'email@getNgModuleDef.fr'
+      'Debbie',
+      'Schmid',
+      'W Alexander Rd',
+      3903,
+      '(867) 322-1852',
+      'debbie.schmidt@gmail.com',
+      'http://demos.themes.guide/bodeo/assets/images/users/w104.jpg'
     ),
     new Contact(
-      'nom',
-      'prenom',
-      'adresse',
-      20,
-      '0709472358',
-      'email@getNgModuleDef.fr'
+      'Frazier',
+      'Seth',
+      'E North St',
+      7396,
+      '(560) 180-4143',
+      'seth.frazier@gmail.com',
+      'http://demos.themes.guide/bodeo/assets/images/users/m105.jpg'
     ),
     new Contact(
-      'nom',
-      'prenom',
-      'adresse',
-      20,
-      '0709472358',
-      'email@getNgModuleDef.fr'
+      'Rosemary',
+      'Porter',
+      'Cackson St',
+      5267,
+      '(497) 160-9776',
+      'rosemary.porter@gmail.com',
+      'http://demos.themes.guide/bodeo/assets/images/users/w102.jpg'
     ),
   ];
 }

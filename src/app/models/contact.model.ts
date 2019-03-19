@@ -6,6 +6,7 @@ export class Contact {
   tel : string;
   email: string;
   dateNaissance : Date;
+  photo : string;
 
   constructor(
     nom : string,
@@ -13,7 +14,8 @@ export class Contact {
     adresse : string,
     codePostal: number,
     tel : string,
-    email: string
+    email: string,
+    photo:string,
     ) 
   {
       this.nom = nom;
@@ -23,6 +25,7 @@ export class Contact {
       this.tel = tel;
       this.email = email;
       this.dateNaissance = new Date();
+      this.photo = photo;
   }
 }
 
