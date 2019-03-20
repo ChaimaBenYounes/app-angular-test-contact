@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 import { Contact } from '../models/contact.model';
 import { ContactService } from '../services/contact.service';
@@ -14,11 +14,17 @@ export class ShowContactComponent implements OnInit {
   contact: Contact;
 
   constructor(private route: ActivatedRoute,
-    private contactService: ContactService) { }
+              private contactService: ContactService,
+              private router: Router) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id');
     this.contact = this.contactService.getContactById(this.id);
+  }
+
+  deleteContact(){
+     this.contactService.DeleteContact(this.contact);
+     this.router.navigate(['/contacts']);
   }
 
 }

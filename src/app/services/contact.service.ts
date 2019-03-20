@@ -65,6 +65,11 @@ export class ContactService {
     this.emitContacts();
   }
 
+  DeleteContact(contact: Contact){
+    this.contacts.splice(+contact.id-1, 1); 
+    this.emitContacts();
+  }
+
   getContactById( id : string ){ 
     return this.contacts.find(
       contact => contact.id === id
