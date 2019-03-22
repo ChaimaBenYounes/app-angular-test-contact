@@ -11,10 +11,9 @@ import { ContactService } from '../services/contact.service';
 })
 export class UpdateContactComponent implements OnInit {
 
-  id : string;
+  id : number;
   updateFormContact: FormGroup;
   contact: Contact;
-  contactById : Contact;
   photo: string;
 
   constructor(private route: ActivatedRoute,
@@ -23,11 +22,16 @@ export class UpdateContactComponent implements OnInit {
               private contactService: ContactService) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id'); // contact dans l'url
+    this.id = this.route.snapshot.params['id']; // id dans l'url
     this.initForm(); // initialisation du formulaire 
-    this.contactById = this.contactService.getContactById(this.id);
-    this.updateFormContact.patchValue(this.contactById);
-    this.photo = this.contactById.photo;
+    this.contactService.getSingleContact(this.id).then(
+        (contact: Contact) => {
+          this.contact = contact;
+          this.updateFormContact.patchValue(this.contact);
+          this.photo = this.contact.photo;
+        }
+    );
+
   }
 
   initForm() {
@@ -72,14 +76,9 @@ export class UpdateContactComponent implements OnInit {
   onSubmit() {
     let contact: Contact;
     contact = this.updateFormContact.value;
-    contact.id = this.id;
     contact.photo = this.photo;
-
-
-    this.contactService.updateContact(contact);
+    contact.id = (this.id).toString();
+    this.contactService.updateContact(this.id, contact);
     this.router.navigate(['/contacts'], { queryParams: { message: 'success updated resource' } });
-       
   }
-
-
 }

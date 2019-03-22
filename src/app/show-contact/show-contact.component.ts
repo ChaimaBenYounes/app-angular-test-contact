@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-
 import { Contact } from '../models/contact.model';
 import { ContactService } from '../services/contact.service';
+
 @Component({
   selector: 'app-show-contact',
   templateUrl: './show-contact.component.html',
@@ -10,7 +10,7 @@ import { ContactService } from '../services/contact.service';
 })
 export class ShowContactComponent implements OnInit {
 
-  id : string;
+  id : number;
   contact: Contact;
 
   constructor(private route: ActivatedRoute,
@@ -18,13 +18,21 @@ export class ShowContactComponent implements OnInit {
               private router: Router) { }
 
   ngOnInit() {
-    this.id = this.route.snapshot.paramMap.get('id');
-    this.contact = this.contactService.getContactById(this.id);
+    this.contact = new Contact("","","","",0,"","","");
+    this.id = this.route.snapshot.params['id'];
+    this.contactService.getSingleContact(this.id).then(
+        (contact: Contact) => {
+          this.contact = contact;
+        }
+    );
   }
 
-  deleteContact(){
-     this.contactService.DeleteContact(this.contact);
+  onDeleteContact(){
+     this.contactService.removeContact(this.id);
      this.router.navigate(['/contacts']);
   }
 
+  onUpdateContact(){
+    this.router.navigate(['/contacts', 'update', this.id]);
+  }
 }

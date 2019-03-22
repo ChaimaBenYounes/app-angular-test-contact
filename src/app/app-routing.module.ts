@@ -8,9 +8,9 @@ import { ShowContactComponent } from './show-contact/show-contact.component';
 
 const appRoutes: Routes = [
   { path: 'contacts',  component: ContactListComponent },
-  { path: 'new-contact', component: NewContactComponent },
-  { path: 'contact/update/:id', component: UpdateContactComponent },
-  { path: 'contact/show/:id', component: ShowContactComponent },
+  { path: 'contacts/new', component: NewContactComponent },
+  { path: 'contacts/update/:id', component: UpdateContactComponent },
+  { path: 'contacts/show/:id', component: ShowContactComponent },
   { path: '**', redirectTo: '/contacts', pathMatch:'full' }
 ];
 
